@@ -1,0 +1,64 @@
+<%- include('partials/header', { title: 'Digital Pet Sanctuary' }) %>
+<div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h1 class="display-4">🐾 Welcome to Digital Pet Sanctuary!</h1>
+            <p class="lead">Adopt and care for amazing virtual creatures</p>
+            
+            <div class="alert alert-success mt-4">
+                <h5>✅ Database Status: <span class="badge bg-success"><%= dbStatus %></span></h5>
+                <p>Using MongoDB Atlas Cloud Database</p>
+            </div>
+            
+            <div class="mt-4">
+                <% if (locals.user) { %>
+                    <a href="/pets" class="btn btn-primary btn-lg me-3">🐉 View My Pets</a>
+                    <a href="/pets/create" class="btn btn-success btn-lg me-3">➕ Adopt New Pet</a>
+                    <a href="/auth/logout" class="btn btn-outline-secondary btn-lg">Logout</a>
+                <% } else { %>
+                    <a href="/auth/register" class="btn btn-primary btn-lg me-3">Get Started</a>
+                    <a href="/auth/login" class="btn btn-outline-primary btn-lg">Login</a>
+                <% } %>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">🐉 Virtual Pets</h5>
+                            <p class="card-text">Adopt unique digital creatures and care for them</p>
+                            <% if (locals.user) { %>
+                                <a href="/pets" class="btn btn-outline-primary">View Pets</a>
+                            <% } else { %>
+                                <a href="/auth/register" class="btn btn-outline-primary">Register to View</a>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">❤️ Status Management</h5>
+                            <p class="card-text">Feed, play, rest - keep your pets happy</p>
+                            <% if (locals.user) { %>
+                                <a href="/pets/create" class="btn btn-outline-success">Adopt Pet</a>
+                            <% } else { %>
+                                <a href="/auth/register" class="btn btn-outline-success">Register to Adopt</a>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">🌐 Cloud Storage</h5>
+                            <p class="card-text">Secure data storage with MongoDB Atlas</p>
+                            <span class="badge bg-success"><%= dbStatus %></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('partials/footer', { dbStatus: dbStatus }) %>
