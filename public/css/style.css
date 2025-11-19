@@ -1,0 +1,413 @@
+/* public/css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Comic+Neue:wght@400;700&display=swap');
+
+/* Root Variables - Warmer, Cozier Palette */
+:root {
+    --primary-color: #FF9A8B; /* Soft coral pink for warmth */
+    --primary-dark: #FF7B6B; /* Slightly deeper warm pink */
+    --secondary-color: #F4A261; /* Warm peach orange */
+    --success-color: #A8E6CF; /* Soft mint green for gentle success */
+    --danger-color: #FF6B6B; /* Muted red for alerts */
+    --warning-color: #FFE66D; /* Soft sunny yellow */
+    --info-color: #B8E6F4; /* Pale blue for info, keeping subtle warmth */
+    --light-color: #FFF8E7; /* Warm off-white */
+    --dark-color: #5D4037; /* Warm brown-gray */
+    --common-color: #BCAAA4; /* Soft taupe */
+    --rare-color: #D1C4E9; /* Lavender for rarity, softer */
+    --epic-color: #CE93D8; /* Muted purple */
+    --legendary-color: #F8BBD9; /* Soft pink */
+}
+
+/* General Styles - Cute Font Integration */
+body {
+    background-color: var(--light-color);
+    font-family: 'Comic Neue', 'Fredoka One', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #5C4B51; /* Warmer text color */
+    padding-top: 2rem; /* Added top padding to create more space at the very top of the page */
+    margin: 0;
+}
+
+/* Headings with Extra Cuteness */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka One', 'Comic Neue', cursive;
+    font-weight: 400;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+/* Navbar Styling */
+.navbar-brand {
+    font-family: 'Fredoka One', cursive;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: white !important;
+}
+.navbar-dark.bg-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+}
+
+/* Card Styling - Enhanced with Soft Shadows */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(244, 162, 97, 0.1); /* Warm shadow tint */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 248, 231, 0.95); /* Warm backdrop */
+    backdrop-filter: blur(10px);
+}
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(244, 162, 97, 0.2);
+}
+.card-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0 !important;
+    font-family: 'Fredoka One', cursive;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+/* Button Styling - Bouncy Feel */
+.btn {
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-family: 'Comic Neue', sans-serif;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border: none;
+    color: white;
+}
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 154, 139, 0.4); /* Warm glow */
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-color) 100%);
+}
+.btn-success {
+    background: linear-gradient(135deg, var(--success-color) 0%, #A0D8B8 100%); /* Softer green gradient */
+    border: none;
+    color: #2D5A3A; /* Darker green text for contrast */
+}
+.btn-success:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(168, 230, 207, 0.4);
+}
+
+/* Progress Bar Styling for Pet Stats - Rounded and Cute */
+.progress {
+    height: 10px;
+    border-radius: 10px;
+    background-color: #F0E6D2; /* Warm background */
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.progress-bar {
+    border-radius: 10px;
+    transition: width 0.6s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Rarity Badge Colors - Gradient with Glow */
+.badge.bg-secondary { /* Common */
+    background: linear-gradient(135deg, var(--common-color) 0%, #A89B8F 100%) !important;
+    box-shadow: 0 2px 5px rgba(188, 170, 164, 0.3);
+    color: white;
+}
+.badge.bg-info { /* Rare */
+    background: linear-gradient(135deg, var(--rare-color) 0%, #B7A8D9 100%) !important;
+    box-shadow: 0 2px 5px rgba(209, 196, 233, 0.3);
+    color: white;
+}
+.badge.bg-warning { /* Epic */
+    background: linear-gradient(135deg, var(--epic-color) 0%, #C37FB3 100%) !important;
+    box-shadow: 0 2px 5px rgba(206, 147, 216, 0.3);
+    color: white;
+}
+.badge.bg-danger { /* Legendary */
+    background: linear-gradient(135deg, var(--legendary-color) 0%, #F48FB1 100%) !important;
+    box-shadow: 0 2px 5px rgba(248, 187, 217, 0.3);
+    color: white;
+}
+
+/* Pet Species Emojis and Styling */
+.pet-emoji {
+    font-size: 1.3em;
+    margin-right: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Form Styling - Soft and Playful */
+.form-control {
+    border-radius: 15px;
+    border: 2px solid #E8D5B7; /* Warm border */
+    padding: 12px 18px;
+    font-family: 'Comic Neue', sans-serif;
+    transition: all 0.3s ease;
+    background: rgba(255, 248, 231, 0.9);
+    color: #5C4B51;
+}
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 154, 139, 0.2), 0 0 20px rgba(255, 154, 139, 0.1);
+    transform: scale(1.02);
+}
+.form-select {
+    border-radius: 15px;
+    padding: 12px 18px;
+    font-family: 'Comic Neue', sans-serif;
+    background: rgba(255, 248, 231, 0.9);
+    color: #5C4B51;
+}
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(255, 154, 139, 0.5);
+}
+
+/* Alert Styling - Softer Gradients */
+.alert {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.alert-warning {
+    background: linear-gradient(135deg, #FFF8E1 0%, #FFE082 100%); /* Warmer yellow */
+    color: #7D5A00;
+}
+.alert-danger {
+    background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%); /* Softer red */
+    color: #C62828;
+}
+.alert-success {
+    background: linear-gradient(135deg, #E8F5E8 0%, #C8E6C9 100%); /* Softer green */
+    color: #2E7D32;
+    border-left: 5px solid var(--success-color);
+    box-shadow: 0 0 15px rgba(168, 230, 207, 0.2);
+}
+
+/* Jumbotron/Hero Section - More Padding and Fun */
+.jumbotron {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem; /* Added top margin to create more space below the navbar/header */
+    box-shadow: 0 10px 30px rgba(244, 162, 97, 0.2);
+    font-family: 'Fredoka One', cursive;
+}
+.jumbotron h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Pet Status Indicators - With Icons Feel */
+.status-low {
+    color: var(--danger-color);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255, 107, 107, 0.3);
+}
+.status-medium {
+    color: var(--warning-color);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255, 230, 109, 0.3);
+}
+.status-high {
+    color: var(--success-color);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(168, 230, 207, 0.3);
+}
+
+/* Footer Styling */
+footer.bg-dark {
+    background: linear-gradient(135deg, var(--dark-color) 0%, #8D6E63 100%) !important; /* Warmer dark */
+    margin-top: 3rem;
+    padding: 2rem 0;
+    color: #F5F5F5;
+    font-family: 'Comic Neue', sans-serif;
+}
+
+/* Empty State Styling - Whimsical */
+.empty-state {
+    padding: 4rem 1rem;
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+}
+.empty-state h3 {
+    color: var(--common-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+/* Breadcrumb Styling */
+.breadcrumb {
+    background-color: transparent;
+    padding: 0.75rem 0;
+    font-family: 'Comic Neue', sans-serif;
+}
+.breadcrumb-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.breadcrumb-item a:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 5px rgba(244, 162, 97, 0.5);
+}
+.breadcrumb-item.active {
+    color: var(--common-color);
+}
+
+/* Care Button Group */
+.care-buttons .btn {
+    margin: 0 5px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design - Adjusted for Cuteness */
+@media (max-width: 768px) {
+    body {
+        padding-top: 1rem; /* Reduced top padding on mobile for better fit */
+    }
+    .jumbotron {
+        padding: 3rem 1rem;
+        border-radius: 15px;
+        margin-top: 1rem; /* Adjusted top margin on mobile */
+    }
+   
+    .jumbotron h1 {
+        font-size: 2.2rem;
+    }
+   
+    .btn-lg {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+    }
+   
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animation for Pet Cards - Smoother Bounce */
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+.card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Custom Utility Classes */
+.gradient-bg {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Fredoka One', cursive;
+}
+.shadow-custom {
+    box-shadow: 0 6px 20px rgba(244, 162, 97, 0.1);
+}
+
+/* Pet Icon Styling - Pixelated Cute */
+.pet-icon {
+    width: 56px;
+    height: 56px;
+    max-width: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    border-radius: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-bottom: 2px;
+    box-shadow: 0 2px 8px rgba(244, 162, 97, 0.1);
+    transition: transform 0.2s ease;
+}
+.pet-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Pet Emoji Fallback */
+.pet-emoji-fallback {
+    font-size: 1.1em;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Pet Detail Icon - Larger and Shadowed */
+.pet-detail-icon {
+    width: 80px;
+    height: 80px;
+    max-width: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(244, 162, 97, 0.15);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 12px;
+    margin-bottom: 4px;
+    transition: transform 0.3s ease;
+}
+.pet-detail-icon:hover {
+    transform: scale(1.05);
+}
+.pet-emoji-fallback { /* Detail fallback */
+    font-size: 2em;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+/* Card Layout Enhancements */
+.card {
+    animation: fadeIn 0.5s ease-in-out;
+}
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-title {
+    word-break: keep-all;
+    margin-bottom: 0.5rem;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+.row {
+    align-items: stretch;
+}
+
+/* Progress Bar Refinements */
+.progress {
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.progress-bar {
+    border-radius: 5px;
+}
