@@ -9,9 +9,9 @@
 - package.json: lists of dependencies, …
   
 - public (folder, if you have): what static files are included, …
-  -css/style.css
-  -images/
-  -sounds/
+  -css/style.css:
+  -images/:
+  -sounds/:
   
 - views (folder, if you have): what EJS or UI files included, …
   -auth/
