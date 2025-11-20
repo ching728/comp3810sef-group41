@@ -10,8 +10,8 @@
   
 - public (folder, if you have): what static files are included, …
   -css/style.css:
-  -images/:
-  -sounds/:
+  -images/: The photo of each pets
+  -sounds/: feed, play, rest sounds, when the user on-click it
   
 - views (folder, if you have): what EJS or UI files included, …
   -auth/
@@ -23,10 +23,10 @@
    -header.ejs:
   -pets/
    -crate.ejs: 
-   -detail.ejs: 
-   -list.ejs: 
+   -detail.ejs: Show the detail with the pets such as hungey, sleepy 
+   -list.ejs: List out all the pets
   -dashboard.ejs: 
-  -error.ejs:
+  -error.ejs: 
   -index.ejs:
   
 - models (folder, if you have): what model files are included, …
