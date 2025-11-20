@@ -9,14 +9,14 @@
 - package.json: lists of dependencies, …
   
 - public (folder, if you have): what static files are included, …
-  -css/style.css:
-  -images/: The photo of each pets
-  -sounds/: feed, play, rest sounds, when the user on-click it
+  -css/style.css: Global styles for the app UI.
+  -images/: The photo of each pets.
+  -sounds/: When the user clicks the corresponding button, it will play sounds of playing, eating, and resting.
   
 - views (folder, if you have): what EJS or UI files included, …
   -auth/
-   -login.ejs: Provided for user login
-   -register.ejs: Provided for register login
+   -login.ejs: Provided for user login.
+   -register.ejs: Provided for register login.
   -partials/
    -footer.ejs: 
    -haeder.ejs: 
